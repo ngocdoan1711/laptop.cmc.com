@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" extends="struts-default" namespace="/">
+	<!-- 	define action -->	
+	<!-- Show all Product by select Category -->
+	<action name="category" class="cmc.struts.action.ProductAction" method="getProductByCategoryId">
+		<result name="success">/productcategories.jsp</result>
+	</action>
+	<!-- Show Detail Product  -->
+	<action name="product" class="cmc.struts.action.ProductAction" method="getProductById">
+		<result name="success">/detailproduct.jsp</result>
+	</action>
+	<!-- Action Login -->
+	<action name="login" class="cmc.struts.action.UserAction" method="Login">
+		<result name="user">/index.jsp</result>
+		<result name="error">/login.jsp</result>
+	</action>
+	</package>
+	
+	<package name="default2" extends="struts-default" namespace="/admin">
+	<action name="login" class="cmc.struts.action.UserAction" method="Login">
+		<result name="amdin">/index.jsp</result>
+	</action>	
+	</package>
+</struts>
